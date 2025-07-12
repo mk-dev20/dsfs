@@ -10,9 +10,16 @@ import StudentDashboardLayout from './pages/dashboard/student/StudentDashboardLa
 import StudentHomePage from './pages/dashboard/student/StudentHomePage';
 import StudentProjectsPage from './pages/dashboard/student/StudentProjectsPage';
 import StudentDonationsPage from './pages/dashboard/student/StudentDonationsPage';
+import StudentAboutPage from './pages/dashboard/student/StudentAboutPage';
+import StudentSupportPage from './pages/dashboard/student/StudentSupportPage';
+import StudentProfilePage from './pages/dashboard/student/StudentProfilePage';
 import DonorDashboardLayout from './pages/dashboard/donor/DonorDashboardLayout';
 import DonorHomePage from './pages/dashboard/donor/DonorHomePage';
 import DonorExplorePage from './pages/dashboard/donor/DonorExplorePage';
+import DonorDonatePage from './pages/dashboard/donor/DonorDonatePage';
+import DonorAboutPage from './pages/dashboard/donor/DonorAboutPage';
+import DonorSupportPage from './pages/dashboard/donor/DonorSupportPage';
+import DonorProfilePage from './pages/dashboard/donor/DonorProfilePage';
 
 function App() {
   return (
@@ -39,9 +46,9 @@ function App() {
             <Route path="home" element={<StudentHomePage />} />
             <Route path="projects" element={<StudentProjectsPage />} />
             <Route path="donations" element={<StudentDonationsPage />} />
-            <Route path="about" element={<div className="p-6"><h1 className="text-2xl font-bold">About DSFS</h1><p>Learn more about our platform...</p></div>} />
-            <Route path="support" element={<div className="p-6"><h1 className="text-2xl font-bold">Support</h1><p>Get help with your account...</p></div>} />
-            <Route path="profile" element={<div className="p-6"><h1 className="text-2xl font-bold">Profile</h1><p>Manage your profile...</p></div>} />
+            <Route path="about" element={<StudentAboutPage />} />
+            <Route path="support" element={<StudentSupportPage />} />
+            <Route path="profile" element={<StudentProfilePage />} />
           </Route>
           
           {/* Donor Dashboard */}
@@ -49,10 +56,10 @@ function App() {
             <Route index element={<Navigate to="/dashboard/donor/home" replace />} />
             <Route path="home" element={<DonorHomePage />} />
             <Route path="explore" element={<DonorExplorePage />} />
-            <Route path="donate" element={<div className="p-6"><h1 className="text-2xl font-bold">Donate</h1><p>Make a donation...</p></div>} />
-            <Route path="about" element={<div className="p-6"><h1 className="text-2xl font-bold">About DSFS</h1><p>Learn more about our platform...</p></div>} />
-            <Route path="support" element={<div className="p-6"><h1 className="text-2xl font-bold">Support</h1><p>Get help with your account...</p></div>} />
-            <Route path="profile" element={<div className="p-6"><h1 className="text-2xl font-bold">Profile</h1><p>Manage your profile...</p></div>} />
+            <Route path="donate" element={<DonorDonatePage />} />
+            <Route path="about" element={<DonorAboutPage />} />
+            <Route path="support" element={<DonorSupportPage />} />
+            <Route path="profile" element={<DonorProfilePage />} />
           </Route>
           
           {/* Catch all route */}

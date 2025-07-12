@@ -24,7 +24,7 @@ interface SidebarProps {
 }
 
 export function Sidebar({ role }: SidebarProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(true)
   const pathname = usePathname()
 
   const studentNav = [
@@ -49,13 +49,7 @@ export function Sidebar({ role }: SidebarProps) {
 
   return (
     <>
-      {/* Mobile menu button */}
-      <button
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        className="lg:hidden fixed top-4 left-4 z-50 w-10 h-10 bg-white dark:bg-gray-800 rounded-xl shadow-lg flex items-center justify-center"
-      >
-        {isCollapsed ? <Menu className="w-5 h-5" /> : <X className="w-5 h-5" />}
-      </button>
+      {/* Hamburger menu on mobile, right side of topbar (handled in topbar, not here) */}
 
       {/* Overlay for mobile */}
       {!isCollapsed && (
@@ -70,17 +64,15 @@ export function Sidebar({ role }: SidebarProps) {
         'fixed lg:static inset-y-0 left-0 z-40 w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 transition-transform duration-300 ease-in-out',
         isCollapsed && 'lg:transform lg:translate-x-0 -translate-x-full'
       )}>
-        <div className="flex flex-col h-full">
-          {/* Logo */}
-          <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-primary-800 rounded-xl flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900 dark:text-white">DSFS</h1>
-                <p className="text-xs text-gray-500 dark:text-gray-400 capitalize">{role} Portal</p>
-              </div>
+        <div className="flex flex-col h-full overflow-y-auto">
+          {/* User Info Only */}
+          <div className="p-6 border-b border-gray-200 dark:border-gray-700 flex items-center space-x-3">
+            <div className="w-8 h-8 bg-primary-800 rounded-full flex items-center justify-center">
+              <User className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h1 className="text-base font-bold text-gray-900 dark:text-white">John Doe</h1>
+              <p className="text-xs text-gray-500 dark:text-gray-400 capitalize">Student</p>
             </div>
           </div>
 
@@ -106,9 +98,8 @@ export function Sidebar({ role }: SidebarProps) {
               )
             })}
           </nav>
-
-          {/* User section */}
-          <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+          <div className="border-t border-gray-200 dark:border-gray-700 mx-4" />
+          <div className="p-4">
             <button className="flex items-center space-x-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 w-full">
               <LogOut className="w-5 h-5" />
               <span className="font-medium">Sign Out</span>

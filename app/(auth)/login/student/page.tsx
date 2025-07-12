@@ -23,6 +23,11 @@ export default function StudentLoginPage() {
       <div className="flex-1 flex items-center justify-center p-8 bg-white dark:bg-gray-900">
         <div className="max-w-md w-full">
           <div className="text-center mb-8">
+            <div className="mb-4 p-3 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-sm">
+              <strong>Test Login:</strong> <br />
+              email: <span className="font-mono">testuser@gmail.com</span><br />
+              pass: <span className="font-mono">test254</span>
+            </div>
             <div className="w-16 h-16 bg-primary-800 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
               <GraduationCap className="w-8 h-8 text-white" />
             </div>
